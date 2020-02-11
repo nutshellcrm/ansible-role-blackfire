@@ -1,7 +1,9 @@
 ---
 
 - hosts: all
-  sudo: yes
+  become: yes
+  become_user: root
+  become_method: sudo
   roles:
     - { role: ../../ansible-role-blackfire, tags: blackfire }
   vars_files:

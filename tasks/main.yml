@@ -25,7 +25,9 @@
 
 - name: Service blackfire-agent restart
   tags: blackfire
-  sudo: true
+  become: yes
+  become_user: root
+  become_method: sudo
   service: name=blackfire-agent state=restarted
   notify:
     - restart php-fpm
