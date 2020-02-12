@@ -32,7 +32,7 @@
   notify:
     - restart php-fpm
     - restart apache
-  when: agent_configuration_state|changed
+  when: agent_configuration_state.changed
 
 - name: Restart apache if enable in configuration
   tags: blackfire
