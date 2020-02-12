@@ -8,6 +8,7 @@
 - name: Register the packagecloud key
   tags: blackfire
   apt_key:
+    id: "{{ blackfire_package_cloud_key_fingerprint }}"
     url: "{{ blackfire_package_cloud_key_url }}"
     state: present
 
